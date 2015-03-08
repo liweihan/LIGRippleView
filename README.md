@@ -4,7 +4,8 @@
 [![Version](https://img.shields.io/cocoapods/v/LIGRippleView.svg?style=flat)](http://cocoadocs.org/docsets/LIGRippleView)
 [![License](https://img.shields.io/cocoapods/l/LIGRippleView.svg?style=flat)](http://cocoadocs.org/docsets/LIGRippleView)
 [![Platform](https://img.shields.io/cocoapods/p/LIGRippleView.svg?style=flat)](http://cocoadocs.org/docsets/LIGRippleView)
-
+##Demo
+![Demo gif](demo.gif)
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
