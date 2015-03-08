@@ -1,0 +1,17 @@
+PODS:
+  - LIGRippleView (0.1.0):
+    - pop
+  - pop (1.0.7)
+
+DEPENDENCIES:
+  - LIGRippleView (from `../`)
+
+EXTERNAL SOURCES:
+  LIGRippleView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LIGRippleView: 7986495c35f8fca28f2339ebebad8e08c54db6b1
+  pop: 2f14a1ea61339767af9e66741b418c831b3844df
+
+COCOAPODS: 0.35.0

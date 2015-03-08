@@ -7,13 +7,25 @@
 //
 
 #import "LIGViewController.h"
-
+#import <LIGRippleView.h>
 @interface LIGViewController ()
+@property (weak, nonatomic) IBOutlet LIGRippleView *rippleView;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
 @end
 
 @implementation LIGViewController
 
+- (IBAction)buttonDidTouchDown:(UIButton *)sender {
+    [self.rippleView startAnimation];
+
+}
+
+- (IBAction)buttonDidTouchUp:(UIButton *)sender {
+    
+    [self.rippleView finishAnimation];
+    NSLog(@"buttonDidTouchUp");
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -25,5 +37,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

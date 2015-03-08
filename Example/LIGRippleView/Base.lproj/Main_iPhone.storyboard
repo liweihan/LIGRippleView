@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="LIGViewController" sceneMemberID="viewController">
@@ -13,18 +14,49 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYy-aP-ihC">
+                                <rect key="frame" x="250" y="400" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.6941211504" green="1" blue="0.45347838130000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="T5R-Bd-o6F"/>
+                                    <constraint firstAttribute="width" constant="100" id="yQc-OM-SOc"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDidTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="WUH-An-yCV"/>
+                                    <action selector="buttonDidTouchUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SgL-Xr-Ar2"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XxJ-q2-0EA" customClass="LIGRippleView">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ksc-5n-VCW"/>
+                                    <constraint firstAttribute="width" constant="100" id="W1c-7d-o8R"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="uYy-aP-ihC" secondAttribute="centerY" constant="-150" id="5Wh-jT-1aN"/>
+                            <constraint firstAttribute="centerX" secondItem="XxJ-q2-0EA" secondAttribute="centerX" id="7Br-t1-aQd"/>
+                            <constraint firstAttribute="centerY" secondItem="XxJ-q2-0EA" secondAttribute="centerY" id="SKi-jK-BbA"/>
+                            <constraint firstAttribute="centerX" secondItem="uYy-aP-ihC" secondAttribute="centerX" id="vOU-lZ-dhg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="uYy-aP-ihC" id="c84-kT-Qz1"/>
+                        <outlet property="rippleView" destination="XxJ-q2-0EA" id="jUb-JL-u5h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="601" y="434"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
