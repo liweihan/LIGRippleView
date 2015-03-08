@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.name             = "LIGRippleView"
   s.version          = "0.2.0"
   s.summary          = "UIView subclass with elegant ripple effect"
-  s.description      = <<-DESC
-                       DESC
+  # s.description      = <<-DESC
+  #                      DESC
   s.homepage         = "https://github.com/liweihan/LIGRippleView"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
