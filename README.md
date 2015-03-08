@@ -21,7 +21,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Weihan Li, liweihan@me.com
+Weihan Li
 
 ## License
 
