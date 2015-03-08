@@ -58,7 +58,6 @@
     
     CAAnimationGroup *group = [CAAnimationGroup animation];
     group.duration = 0.2;
-    
     group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     group.animations = @[animateLineWidth, animatePath, animateOpacity];
     group.removedOnCompletion = NO;
@@ -97,7 +96,6 @@
     
     CAAnimationGroup *group = [CAAnimationGroup animation];
     group.duration = 0.3;
-    
     group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     group.animations = @[animateLineWidth, animatePath, animateOpacity];
     group.removedOnCompletion = NO;

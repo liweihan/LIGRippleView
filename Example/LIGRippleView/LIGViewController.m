@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.rippleView.backgroundColor = UIColorFromRGB(0xFAF2CD);
+    self.rippleView.backgroundColor = UIColorFromRGB(0xF8E184);
     self.rippleView.strokeColor = UIColorFromRGB(0x8CBDB7);
     self.rippleView.layer.cornerRadius = self.rippleView.bounds.size.width/2.0;
 	// Do any additional setup after loading the view, typically from a nib.
