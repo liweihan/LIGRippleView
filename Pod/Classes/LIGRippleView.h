@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface LIGRippleView : UIView
-@property(nonatomic) UIColor *strokeColor;
+@property(nonatomic,strong) UIColor *strokeColor;
+@property(nonatomic,assign) CGFloat fadeOutOffset;
+
 - (void)startAnimation;
 - (void)finishAnimation;
 

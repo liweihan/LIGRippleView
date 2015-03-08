@@ -8,6 +8,9 @@
 
 #import "LIGViewController.h"
 #import <LIGRippleView.h>
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface LIGViewController ()
 @property (weak, nonatomic) IBOutlet LIGRippleView *rippleView;
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -15,6 +18,7 @@
 @end
 
 @implementation LIGViewController
+
 
 - (IBAction)buttonDidTouchDown:(UIButton *)sender {
     [self.rippleView startAnimation];
@@ -29,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.rippleView.backgroundColor = UIColorFromRGB(0xFAF2CD);
+    self.rippleView.strokeColor = UIColorFromRGB(0x8CBDB7);
+    self.rippleView.layer.cornerRadius = self.rippleView.bounds.size.width/2.0;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
