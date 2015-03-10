@@ -33,9 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.rippleView.backgroundColor = UIColorFromRGB(0xF8E184);
-    self.rippleView.strokeColor = UIColorFromRGB(0x8CBDB7);
+    self.rippleView.backgroundColor = UIColorFromRGB(0xE2D5CD);
+    self.rippleView.rippleColor = UIColorFromRGB(0x7195B5);
     self.rippleView.layer.cornerRadius = self.rippleView.bounds.size.width/2.0;
+    
+    self.button.backgroundColor = UIColorFromRGB(0x556889);
+    self.button.tintColor = UIColorFromRGB(0xE2D5CD);
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

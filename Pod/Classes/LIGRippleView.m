@@ -21,8 +21,11 @@
 
 - (void)commonInit
 {
-    self.strokeColor = [UIColor whiteColor];
-    self.fadeOutOffset = CGRectGetWidth(self.bounds)*0.1;
+    self.rippleColor = [UIColor whiteColor];
+    self.finalOffset = CGRectGetWidth(self.bounds)*0.3;
+    self.finalAlpha = 1.0;
+    self.fadeoutDuration = 0.2;
+    self.expandDuration = 0.3;
 
     [self _addCircleLayer];
     
@@ -32,7 +35,7 @@
 
 - (void)startAnimation{
     self.animating = YES;
-    self.circleLayer.strokeColor = self.strokeColor.CGColor;
+    self.circleLayer.strokeColor = self.rippleColor.CGColor;
     
     CGFloat width = CGRectGetWidth(self.bounds);
     
@@ -57,7 +60,7 @@
     animateOpacity.toValue = @(1.0);
     
     CAAnimationGroup *group = [CAAnimationGroup animation];
-    group.duration = 0.2;
+    group.duration = self.expandDuration;
     group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     group.animations = @[animateLineWidth, animatePath, animateOpacity];
     group.removedOnCompletion = NO;
@@ -84,18 +87,18 @@
     CGFloat fromRadius = width/2.0;
     animatePath.fromValue = (id)[UIBezierPath bezierPathWithRoundedRect:fromRect cornerRadius:fromRadius].CGPath;
     
-    CGFloat offset = self.fadeOutOffset;
+    CGFloat offset = self.finalOffset;
     CGRect toRect = CGRectMake(-offset/2.0, -offset/2.0, width+offset, width+offset);
     CGFloat toRadius = width/2.0 + offset;
     animatePath.toValue = (id)[UIBezierPath bezierPathWithRoundedRect:toRect cornerRadius:toRadius].CGPath;
     
     CABasicAnimation *animateOpacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
     animateOpacity.fromValue = @(1.0);
-    animateOpacity.toValue = @(0.4);
+    animateOpacity.toValue = @(self.finalAlpha);
     
     
     CAAnimationGroup *group = [CAAnimationGroup animation];
-    group.duration = 0.3;
+    group.duration = self.fadeoutDuration;
     group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     group.animations = @[animateLineWidth, animatePath, animateOpacity];
     group.removedOnCompletion = NO;

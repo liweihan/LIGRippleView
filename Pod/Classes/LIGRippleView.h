@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface LIGRippleView : UIView
-@property(nonatomic,strong) UIColor *strokeColor;
-@property(nonatomic,assign) CGFloat fadeOutOffset;
+@property(nonatomic,strong) UIColor *rippleColor;
+
+@property(nonatomic,assign) CGFloat expandDuration;
+@property(nonatomic,assign) CGFloat fadeoutDuration;
+
+@property(nonatomic,assign) CGFloat finalOffset;
+@property(nonatomic,assign) CGFloat finalAlpha;
+
 
 - (void)startAnimation;
 - (void)finishAnimation;
