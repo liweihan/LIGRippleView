@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LIGRippleView"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "UIView subclass with elegant ripple effect"
   # s.description      = <<-DESC
   #                      DESC
